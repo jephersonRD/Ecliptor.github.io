@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ecliptor - Iniciar Sesión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+    <!-- Agregar scripts necesarios para OAuth -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://connect.facebook.net/en_US/sdk.js"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-md p-8 rounded-2xl card-gradient">
+        <div class="text-center mb-8">
+            <i class="fas fa-brain text-blue-500 text-4xl mb-4"></i>
+            <h2 class="text-3xl font-bold">Bienvenido a Ecliptor</h2>
+            <p class="text-gray-400">Crear cuenta nueva</p>
+        </div>
+
+        <form id="registerForm" class="space-y-6" onsubmit="return handleRegister(event)">
+            <div class="flex justify-center mb-6">
+                <div class="relative">
+                    <img id="profilePreview" src="https://api.dicebear.com/7.x/avataaars/svg?seed=default" 
+                         alt="Profile" class="w-24 h-24 rounded-full border-2 border-blue-500">
+                    <label for="profilePic" class="absolute bottom-0 right-0 bg-blue-500 p-2 rounded-full cursor-pointer">
+                        <i class="fas fa-camera text-white"></i>
+                    </label>
+                    <input type="file" id="profilePic" accept="image/*" class="hidden" onchange="previewImage(event)">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium mb-2">Nombre de Usuario</label>
+                <input type="text" id="username" required 
+                    class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium mb-2">Correo Electrónico</label>
+                <input type="email" id="email" required 
+                    class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-blue-500">
+                <span id="emailError" class="text-red-500 text-sm hidden">Correo electrónico inválido</span>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium mb-2">Contraseña</label>
+                <input type="password" id="password" required minlength="6"
+                    class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-blue-500">
+                <span id="passwordError" class="text-red-500 text-sm hidden">La contraseña debe tener al menos 6 caracteres</span>
+            </div>
+
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-semibold transition-colors">
+                Crear Cuenta
+            </button>
+        </form>
+
+        <p class="mt-8 text-center text-gray-400">
+            ¿Ya tienes una cuenta? 
+            <a href="#" onclick="toggleForm()" class="text-blue-500 hover:text-blue-400">Iniciar Sesión</a>
+        </p>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profilePreview').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const profilePic = document.getElementById('profilePreview').src;
+
+            if (!isValidEmail(email) || password.length < 6) return false;
+
+            localStorage.setItem('userAuth', JSON.stringify({
+                username,
+                email,
+                profilePic,
+                loginMethod: 'email'
+            }));
+
+            window.location.href = 'ia.html';
+            return false;
+        }
+
+        function toggleForm() {
+            const title = document.querySelector('h2 + p');
+            const submitBtn = document.querySelector('button[type="submit"]');
+            const toggleLink = document.querySelector('.mt-8 a');
+            const usernameField = document.getElementById('username').parentElement;
+            const profilePicSection = document.querySelector('.flex.justify-center.mb-6');
+
+            if (title.textContent === 'Crear cuenta nueva') {
+                title.textContent = 'Inicia sesión para continuar';
+                submitBtn.textContent = 'Iniciar Sesión';
+                toggleLink.textContent = 'Crear cuenta nueva';
+                usernameField.style.display = 'none';
+                profilePicSection.style.display = 'none';
+            } else {
+                title.textContent = 'Crear cuenta nueva';
+                submitBtn.textContent = 'Crear Cuenta';
+                toggleLink.textContent = 'Iniciar Sesión';
+                usernameField.style.display = 'block';
+                profilePicSection.style.display = 'flex';
+            }
+        }
+
+        // Configuración de OAuth
+        function initOAuth() {
+            // Inicializar Google OAuth
+            google.accounts.id.initialize({
+                client_id: 'TU_GOOGLE_CLIENT_ID',
+                callback: handleGoogleResponse
+            });
+
+            // Inicializar Facebook SDK
+            FB.init({
+                appId: 'TU_FACEBOOK_APP_ID',
+                cookie: true,
+                xfbml: true,
+                version: 'v12.0'
+            });
+        }
+
+        // Manejadores de login social
+        function handleGoogleLogin() {
+            google.accounts.id.prompt();
+        }
+
+        function handleFacebookLogin() {
+            FB.login(function(response) {
+                if (response.authResponse) {
+                    console.log('Bienvenido! Obteniendo información...');
+                    FB.api('/me', function(response) {
+                        handleSocialLogin('facebook', response);
+                    });
+                }
+            });
+        }
+
+        function handleGithubLogin() {
+            window.location.href = `https://github.com/login/oauth/authorize?client_id=TU_GITHUB_CLIENT_ID&scope=user`;
+        }
+
+        // Manejador del formulario de login
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+
+            // Validar email
+            if (!isValidEmail(email)) {
+                emailError.classList.remove('hidden');
+                return false;
+            } else {
+                emailError.classList.add('hidden');
+            }
+
+            // Validar password
+            if (password.length < 6) {
+                passwordError.classList.remove('hidden');
+                return false;
+            } else {
+                passwordError.classList.add('hidden');
+            }
+
+            // Simular autenticación exitosa
+            localStorage.setItem('userAuth', JSON.stringify({
+                email: email,
+                name: email.split('@')[0],
+                loginMethod: 'email'
+            }));
+
+            // Redirigir a la página principal
+            window.location.href = 'ia.html';
+            return false;
+        }
+
+        // Funciones auxiliares
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function handleSocialLogin(provider, userData) {
+            localStorage.setItem('userAuth', JSON.stringify({
+                ...userData,
+                loginMethod: provider
+            }));
+            window.location.href = 'ia.html';
+        }
+
+        // Inicializar OAuth al cargar
+        window.onload = initOAuth;
+    </script>
+</body>
+</html>

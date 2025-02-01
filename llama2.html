@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Llama 2 - Ecliptor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .card-gradient {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="gradient-bg text-gray-100">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-opacity-90 backdrop-blur-md bg-gray-900">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="ia.html" class="flex items-center">
+                        <i class="fas fa-brain text-blue-500 text-3xl mr-3"></i>
+                        <span class="text-2xl font-bold">Ecliptor</span>
+                    </a>
+                </div>
+                <a href="ia.html" class="text-gray-400 hover:text-blue-500">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Volver
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12">
+                <!-- Imagen y título -->
+                <div class="md:w-1/2">
+                    <img src="https://llama-2.ai/wp-content/uploads/2023/08/Llama-2-Release-Update.jpeg" 
+                         alt="Llama 2" 
+                         class="w-full rounded-xl shadow-xl mb-6"/>
+                    <h1 class="text-4xl font-bold mb-4">Llama 2</h1>
+                    <p class="text-xl text-gray-400">Modelo de lenguaje de última generación por Meta</p>
+                </div>
+
+                <!-- Descripción y características -->
+                <div class="md:w-1/2">
+                    <div class="card-gradient rounded-xl p-8 mb-8">
+                        <h2 class="text-2xl font-bold mb-4">Descripción General</h2>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            Llama 2 es una colección de modelos de lenguaje de última generación desarrollados por Meta (anteriormente Facebook). Estos modelos están diseñados para tareas de procesamiento de lenguaje natural (NLP) y destacan por su escalabilidad y eficiencia.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            La familia de modelos Llama 2 incluye versiones con diferentes tamaños, que van desde 7 mil millones de parámetros (7B) hasta 70 mil millones de parámetros (70B), lo que permite adaptarse a una amplia gama de aplicaciones y recursos computacionales.
+                        </p>
+                    </div>
+
+                    <h2 class="text-2xl font-bold mb-6">Características clave</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="feature-card card-gradient p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-3">Escalabilidad</h3>
+                            <p class="text-gray-400">Disponible en tres tamaños principales: 7B, 13B y 70B.</p>
+                        </div>
+                        <div class="feature-card card-gradient p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-3">Open Source</h3>
+                            <p class="text-gray-400">Código abierto para investigación y desarrollo.</p>
+                        </div>
+                        <div class="feature-card card-gradient p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-3">Rendimiento</h3>
+                            <p class="text-gray-400">Compite con modelos de vanguardia como GPT.</p>
+                        </div>
+                        <div class="feature-card card-gradient p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-3">Optimización</h3>
+                            <p class="text-gray-400">Eficiente en uso de recursos y hardware.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aplicaciones -->
+            <div class="mt-16">
+                <h2 class="text-3xl font-bold mb-8">Aplicaciones Comunes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="feature-card card-gradient p-6 rounded-xl">
+                        <i class="fas fa-pen-fancy text-blue-500 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Generación de Texto</h3>
+                        <p class="text-gray-400">Creación de contenido, redacción y escritura creativa.</p>
+                    </div>
+                    <div class="feature-card card-gradient p-6 rounded-xl">
+                        <i class="fas fa-robot text-blue-500 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Asistentes Virtuales</h3>
+                        <p class="text-gray-400">Chatbots inteligentes y atención al cliente.</p>
+                    </div>
+                    <div class="feature-card card-gradient p-6 rounded-xl">
+                        <i class="fas fa-chart-bar text-blue-500 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Análisis de Datos</h3>
+                        <p class="text-gray-400">Extracción de información y resumen de textos.</p>
+                    </div>
+                    <div class="feature-card card-gradient p-6 rounded-xl">
+                        <i class="fas fa-microscope text-blue-500 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Investigación</h3>
+                        <p class="text-gray-400">Experimentación y desarrollo en NLP.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

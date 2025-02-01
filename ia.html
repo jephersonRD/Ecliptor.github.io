@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ecliptor - Ejecución Rápida de Modelos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .card-gradient {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+        }
+
+        .glow {
+            box-shadow: 0 0 15px rgba(66, 153, 225, 0.5);
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero-gradient {
+            background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
+        }
+    </style>
+</head>
+<body class="gradient-bg text-gray-100">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-opacity-90 backdrop-blur-md bg-gray-900">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <i class="fas fa-brain text-blue-500 text-3xl mr-3"></i>
+                    <span class="text-2xl font-bold">Ecliptor</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#inicio" class="hover:text-blue-400 transition-colors">Inicio</a>
+                    <a href="#descripcion" class="hover:text-blue-400 transition-colors">Descripción</a>
+                    <a href="#caracteristicas" class="hover:text-blue-400 transition-colors">Características</a>
+                    <a href="#modelos" class="hover:text-blue-400 transition-colors">Modelos</a>
+                    <a href="#futuro" class="hover:text-blue-400 transition-colors">Futuro</a>
+                    <!-- Nuevo botón de perfil -->
+                    <div class="flex items-center space-x-3 ml-4 relative">
+                        <button onclick="toggleUserMenu()" class="flex items-center space-x-3 focus:outline-none">
+                            <img id="userAvatar" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Avatar" 
+                                 class="w-8 h-8 rounded-full border-2 border-blue-500">
+                            <span id="userName" class="text-sm font-medium">Usuario</span>
+                        </button>
+                        
+                        <!-- Menú desplegable -->
+                        <div id="userMenu" class="absolute right-0 top-full mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden">
+                            <div class="py-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
+                                    <i class="fas fa-user-edit mr-2"></i>Editar Perfil
+                                </a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
+                                    <i class="fas fa-envelope mr-2"></i>Cambiar Correo
+                                </a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
+                                    <i class="fas fa-users mr-2"></i>Gestionar Usuarios
+                                </a>
+                                <hr class="border-gray-700 my-1">
+                                <a href="#" onclick="handleLogout()" class="block px-4 py-2 text-sm text-red-400 hover:bg-gray-700">
+                                    <i class="fas fa-sign-out-alt mr-2"></i>Cerrar Sesión
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="md:hidden"></button>
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                        Ejecuta Modelos de IA 
+                        <span class="text-blue-500">Sin Límites</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-300">
+                        Optimiza tus recursos con nuestra solución para ejecutar modelos de Ollama. 
+                        Rápido, eficiente y sin consumir excesiva RAM.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="login.html" id="btnComenzar" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+                            Comenzar
+                        </a>
+                        <a href="#modelos" class="border border-blue-500 hover:bg-blue-500 px-8 py-3 rounded-lg font-semibold transition-colors">
+                            Ver Modelos
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 animate-float">
+                    <div class="w-full h-[400px] flex items-center justify-end bg-transparent"> <!-- Añadido justify-end y bg-transparent -->
+                        <img 
+                            src="https://img.freepik.com/vector-premium/conjunto-chips-ia-instalar-e-icono-modo-configuracion-ia-vector-ia-simbolo-forma-ilustracion_293525-2442.jpg" 
+                            alt="AI Chip Illustration" 
+                            class="w-[400px] h-[400px] object-contain rounded-lg glow mr-4"> <!-- Cambiado ml-4 por mr-4 y object-cover por object-contain -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Descripción Section (Nueva sección) -->
+    <section id="descripcion" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Descripción del Programa</h2>
+            <div class="max-w-4xl mx-auto space-y-8 text-gray-300">
+                <div class="card-gradient rounded-xl p-8 feature-card"> <!-- Nuevo contenedor para el texto -->
+                    <h3 class="text-xl font-bold mb-4 text-blue-400">Sobre Ecliptor</h3>
+                    <p class="text-lg leading-relaxed">
+                        Ecliptor es una herramienta revolucionaria diseñada para ejecutar modelos de inteligencia artificial (IA) locales, como los de Ollama, de manera eficiente, rápida y sin necesidad de conexión a internet. A diferencia de otras soluciones que consumen grandes cantidades de recursos, Ecliptor está optimizado para funcionar en equipos de bajos recursos, desde PCs con 1 GB de RAM hacia arriba, sin comprometer el rendimiento de tu sistema.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"> <!-- Cambiado a 3 columnas -->
+                    <div class="card-gradient rounded-xl p-6 feature-card"> <!-- Añadido feature-card -->
+                        <h3 class="text-xl font-bold mb-4 text-blue-400">¿Para quién es Ecliptor?</h3>
+                        <ul class="space-y-2 list-disc list-inside">
+                            <li>Desarrolladores que necesitan ejecutar modelos de IA en entornos limitados</li>
+                            <li>Estudiantes que quieren experimentar con IA sin hardware potente</li>
+                            <li>Empresas que buscan soluciones de IA locales y privadas</li>
+                            <li>Entusiastas de la tecnología interesados en IA</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-gradient rounded-xl p-6 feature-card"> <!-- Añadido feature-card -->
+                        <h3 class="text-xl font-bold mb-4 text-blue-400">Requisitos mínimos</h3>
+                        <ul class="space-y-2 list-disc list-inside">
+                            <li>RAM: Desde 1 GB</li>
+                            <li>CPU: Procesador de doble núcleo (o superior)</li>
+                            <li>Almacenamiento: Variable según el modelo</li>
+                            <li>SO: Windows, Linux o macOS</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-gradient rounded-xl p-6 feature-card"> <!-- Añadido feature-card -->
+                        <h3 class="text-xl font-bold mb-4 text-blue-400">Ventajas competitivas</h3>
+                        <ul class="space-y-2 list-disc list-inside">
+                            <li>Eficiencia sin igual: PCs con solo 1 GB de RAM</li>
+                            <li>Privacidad total: Ejecución 100% local</li>
+                            <li>Flexibilidad: Compatible con múltiples modelos</li>
+                            <li>Facilidad de uso: Interfaz intuitiva</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="caracteristicas" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Características Principales</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="feature-card card-gradient p-8 rounded-xl">
+                    <div class="text-blue-500 text-5xl mb-6">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Velocidad Optimizada</h3>
+                    <p class="text-gray-400">
+                        Ejecuta modelos de IA con velocidad excepcional y mínimo impacto en tus recursos.
+                    </p>
+                </div>
+                <div class="feature-card card-gradient p-8 rounded-xl">
+                    <div class="text-blue-500 text-5xl mb-6">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Bajo Consumo</h3>
+                    <p class="text-gray-400">
+                        Diseñado para minimizar el uso de RAM y CPU sin comprometer el rendimiento.
+                    </p>
+                </div>
+                <div class="feature-card card-gradient p-8 rounded-xl">
+                    <div class="text-blue-500 text-5xl mb-6">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Compatible Ollama</h3>
+                    <p class="text-gray-400">
+                        Integración perfecta con todos los modelos de Ollama disponibles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models Section -->
+    <section id="modelos" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Modelos Disponibles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-gray-800 rounded-xl overflow-hidden">
+                    <img src="https://llama-2.ai/wp-content/uploads/2023/08/Llama-2-Release-Update.jpeg" alt="Modelo Llama 2" class="w-full h-48 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Llama 2</h3>
+                        <p class="text-gray-400 mb-4">
+                            Modelo de lenguaje avanzado optimizado para rendimiento.
+                        </p>
+                        <a href="llama2.html" class="text-blue-500 hover:text-blue-400">Más información →</a>
+                    </div>
+                </div>
+                <div class="feature-card bg-gray-800 rounded-xl overflow-hidden">
+                    <img src="https://raona.com/wp-content/uploads/2024/02/mistral-ai-1024x505.webp" alt="Modelo Mistral" class="w-full h-48 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Mistral</h3>
+                        <p class="text-gray-400 mb-4">
+                            Modelo eficiente para procesamiento de lenguaje natural.
+                        </p>
+                        <a href="mistral.html" class="text-blue-500 hover:text-blue-400">Más información →</a>
+                    </div>
+                </div>
+                <div class="feature-card bg-gray-800 rounded-xl overflow-hidden">
+                    <img src="https://pbs.twimg.com/media/GFBmtatb0AADYhy?format=jpg&name=4096x4096" alt="Modelo CodeLlama" class="w-full h-48 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">CodeLlama</h3>
+                        <p class="text-gray-400 mb-4">
+                            Especializado en generación y análisis de código.
+                        </p>
+                        <a href="codellama.html" class="text-blue-500 hover:text-blue-400">Más información →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Section -->
+    <section id="futuro" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Próximamente</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="feature-card card-gradient p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <i class="fab fa-huggingface text-4xl text-blue-500 mr-4"></i>
+                        <h3 class="text-2xl font-bold">Integración Hugging Face</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Próximamente añadiremos soporte para modelos de Hugging Face, expandiendo las posibilidades.
+                    </p>
+                </div>
+                <div class="feature-card card-gradient p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-rocket text-4xl text-blue-500 mr-4"></i>
+                        <h3 class="text-2xl font-bold">Optimizaciones Avanzadas</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Nuevas mejoras de rendimiento y características para una experiencia aún más fluida.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-brain text-blue-500 text-3xl mr-3"></i>
+                        <span class="text-2xl font-bold">Ecliptor</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Optimizando el futuro de la IA</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/jephersonRD" class="text-gray-400 hover:text-blue-500">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Jepherson_jp" class="text-gray-400 hover:text-blue-500">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@jepherson_rd" class="text-gray-400 hover:text-blue-500">
+                        <i class="fab fa-tiktok text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2024 Ecliptor. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Verificar si el usuario está autenticado
+        const isAuthenticated = localStorage.getItem('userAuth');
+        const btnComenzar = document.getElementById('btnComenzar');
+        const userProfile = document.querySelector('.flex.items-center.space-x-3');
+
+        if (isAuthenticated) {
+            btnComenzar.href = 'download.html';
+            userProfile.style.display = 'flex';
+        } else {
+            btnComenzar.href = 'login.html';
+            userProfile.style.display = 'none';
+        }
+
+        function toggleUserMenu() {
+            const menu = document.getElementById('userMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function handleLogout() {
+            localStorage.removeItem('userAuth');
+            window.location.reload();
+        }
+
+        // Actualizar información del usuario
+        const userAuth = JSON.parse(localStorage.getItem('userAuth'));
+        if (userAuth) {
+            document.getElementById('userName').textContent = userAuth.username || 'Usuario';
+            if (userAuth.profilePic) {
+                document.getElementById('userAvatar').src = userAuth.profilePic;
+            }
+        }
+
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('userMenu');
+            const userButton = document.querySelector('.flex.items-center.space-x-3.ml-4');
+            if (!userButton.contains(event.target) && !menu.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeLlama - Ecliptor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .card-gradient {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="gradient-bg text-gray-100">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-opacity-90 backdrop-blur-md bg-gray-900">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="ia.html" class="flex items-center">
+                        <i class="fas fa-brain text-blue-500 text-3xl mr-3"></i>
+                        <span class="text-2xl font-bold">Ecliptor</span>
+                    </a>
+                </div>
+                <a href="ia.html" class="text-gray-400 hover:text-blue-500">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Volver
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12">
+                <!-- Imagen y título -->
+                <div class="md:w-1/2">
+                    <img src="https://pbs.twimg.com/media/GFBmtatb0AADYhy?format=jpg&name=4096x4096" 
+                         alt="CodeLlama" 
+                         class="w-full rounded-xl shadow-xl mb-6"/>
+                    <h1 class="text-4xl font-bold mb-4">CodeLlama</h1>
+                    <p class="text-xl text-gray-400">Modelo especializado en código basado en Llama 2</p>
+                </div>
+
+                <!-- Descripción y características -->
+                <div class="md:w-1/2">
+                    <div class="card-gradient rounded-xl p-8 mb-8">
+                        <h2 class="text-2xl font-bold mb-4">Descripción General</h2>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            CodeLlama es un modelo de lenguaje de gran escala (LLM) diseñado específicamente para trabajar con código. Desarrollado como una variante especializada de los modelos Llama 2, es capaz de entender, generar y discutir código en respuesta a prompts de texto.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Está disponible en varios tamaños, que van desde 7 mil millones de parámetros (7B) hasta 70 mil millones de parámetros (70B), lo que lo hace adaptable a diferentes necesidades y recursos computacionales.
+                        </p>
+                    </div>
+
+                    <!-- Versiones disponibles -->
+                    <h2 class="text-2xl font-bold mb-6">Versiones Disponibles</h2>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="feature-card card-gradient p-4 rounded-xl">
+                            <h3 class="text-lg font-bold mb-2">7B</h3>
+                            <p class="text-gray-400">Ligero y eficiente</p>
+                        </div>
+                        <div class="feature-card card-gradient p-4 rounded-xl">
+                            <h3 class="text-lg font-bold mb-2">13B</h3>
+                            <p class="text-gray-400">Equilibrio óptimo</p>
+                        </div>
+                        <div class="feature-card card-gradient p-4 rounded-xl">
+                            <h3 class="text-lg font-bold mb-2">34B</h3>
+                            <p class="text-gray-400">Alto rendimiento</p>
+                        </div>
+                        <div class="feature-card card-gradient p-4 rounded-xl">
+                            <h3 class="text-lg font-bold mb-2">70B</h3>
+                            <p class="text-gray-400">Máxima potencia</p>
+                        </div>
+                    </div>
+
+                    <!-- Características clave -->
+                    <h2 class="text-2xl font-bold mb-6">Características Clave</h2>
+                    <div class="space-y-4">
+                        <div class="feature-card card-gradient p-6 rounded-xl">
+                            <div class="flex items-start">
+                                <i class="fas fa-code text-blue-500 text-2xl mt-1 mr-4"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Especializado en Código</h3>
+                                    <p class="text-gray-400">Soporte para múltiples lenguajes de programación como Python, JavaScript, Java, C++, y más.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-card card-gradient p-6 rounded-xl">
+                            <div class="flex items-start">
+                                <i class="fas fa-terminal text-blue-500 text-2xl mt-1 mr-4"></i>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Generación de Código</h3>
+                                    <p class="text-gray-400">Crea código funcional a partir de descripciones en lenguaje natural.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aplicaciones -->
+            <div class="mt-16">
+                <h2 class="text-3xl font-bold mb-8">Aplicaciones Principales</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="feature-card card-gradient p-6 rounded-xl">
+                        <i class="fas fa-laptop-code text-blue-500 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Asistencia en Programación</h3>
+                        <p class="text-gray-400">Generación y autocompletado de código inteligente.</p>
+                    </div>
+                    <div class="feature-card card-gradient p-6 rounded-xl">
+                        <i class="fas fa-bug text-blue-500 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Depuración</h3>
+                        <p class="text-gray-400">Identificación y explicación de errores en el código.</p>
+                    </div>
+                    <div class="feature-card card-gradient p-6 rounded-xl">
+                        <i class="fas fa-graduation-cap text-blue-500 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Educación</h3>
+                        <p class="text-gray-400">Ayuda en el aprendizaje de programación.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

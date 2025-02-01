@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ecliptor - Descargar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .download-card {
+            transition: all 0.3s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="gradient-bg text-gray-100 min-h-screen">
+    <div class="container mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Descargar Ecliptor</h1>
+            <p class="text-xl text-gray-400">Selecciona tu sistema operativo para comenzar</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Windows -->
+            <div class="download-card bg-gray-800 rounded-xl p-8 text-center">
+                <i class="fab fa-windows text-6xl text-blue-500 mb-6"></i>
+                <h2 class="text-2xl font-bold mb-4">Windows</h2>
+                <p class="text-gray-400 mb-6">Compatible con Windows 10 y 11</p>
+                <a href="ecliptor-windows.exe" download 
+                   class="inline-block bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors w-full">
+                    Descargar para Windows
+                </a>
+                <p class="text-sm text-gray-500 mt-4">Version 1.0.0</p>
+            </div>
+
+            <!-- Linux -->
+            <div class="download-card bg-gray-800 rounded-xl p-8 text-center">
+                <i class="fab fa-linux text-6xl text-gray-500 mb-6"></i>
+                <h2 class="text-2xl font-bold mb-4">Linux</h2>
+                <p class="text-gray-400 mb-6">Ubuntu, Debian, Fedora</p>
+                <button 
+                    class="bg-gray-700 px-8 py-3 rounded-lg font-semibold w-full disabled cursor-not-allowed">
+                    Próximamente
+                </button>
+                <p class="text-sm text-gray-500 mt-4">En desarrollo</p>
+            </div>
+
+            <!-- macOS -->
+            <div class="download-card bg-gray-800 rounded-xl p-8 text-center">
+                <i class="fab fa-apple text-6xl text-gray-500 mb-6"></i>
+                <h2 class="text-2xl font-bold mb-4">macOS</h2>
+                <p class="text-gray-400 mb-6">Intel y Apple Silicon</p>
+                <button 
+                    class="bg-gray-700 px-8 py-3 rounded-lg font-semibold w-full disabled cursor-not-allowed">
+                    Próximamente
+                </button>
+                <p class="text-sm text-gray-500 mt-4">En desarrollo</p>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center">
+            <h3 class="text-2xl font-bold mb-6">Requisitos del Sistema</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-gray-800 rounded-xl p-6">
+                    <h4 class="font-bold mb-4">Mínimos</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li>RAM: 1 GB</li>
+                        <li>CPU: Doble núcleo</li>
+                        <li>Espacio: 500 MB</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-6">
+                    <h4 class="font-bold mb-4">Recomendados</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li>RAM: 4 GB</li>
+                        <li>CPU: Quad-core</li>
+                        <li>Espacio: 2 GB</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-6">
+                    <h4 class="font-bold mb-4">Software</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li>Windows 10/11</li>
+                        <li>Linux (Próximamente)</li>
+                        <li>macOS (Próximamente)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center">
+            <a href="index.html" class="text-blue-500 hover:text-blue-400 inline-flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Volver al inicio
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Verificar autenticación
+        document.addEventListener('DOMContentLoaded', function() {
+            const isAuthenticated = localStorage.getItem('userAuth');
+            if (!isAuthenticated) {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>

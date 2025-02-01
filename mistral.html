@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mistral - Ecliptor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .card-gradient {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="gradient-bg text-gray-100">
+    <!-- Header con botón de retorno -->
+    <header class="fixed w-full z-50 bg-opacity-90 backdrop-blur-md bg-gray-900">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="ia.html" class="flex items-center">
+                        <i class="fas fa-brain text-blue-500 text-3xl mr-3"></i>
+                        <span class="text-2xl font-bold">Ecliptor</span>
+                    </a>
+                </div>
+                <a href="ia.html" class="text-gray-400 hover:text-blue-500">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Volver
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="pt-24 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12">
+                <!-- Imagen y título -->
+                <div class="md:w-1/2">
+                    <img src="https://raona.com/wp-content/uploads/2024/02/mistral-ai-1024x505.webp" 
+                         alt="Mistral AI" 
+                         class="w-full rounded-xl shadow-xl mb-6"/>
+                    <h1 class="text-4xl font-bold mb-4">Mistral 7B (v0.3)</h1>
+                    <p class="text-xl text-gray-400">Modelo de lenguaje eficiente y escalable por Mistral AI</p>
+                </div>
+
+                <!-- Descripción y características -->
+                <div class="md:w-1/2">
+                    <div class="card-gradient rounded-xl p-8 mb-8">
+                        <h2 class="text-2xl font-bold mb-4">Descripción General</h2>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            El modelo Mistral 7B es un modelo de lenguaje de alto rendimiento desarrollado por Mistral AI, una empresa enfocada en crear soluciones de inteligencia artificial eficientes y escalables.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Con 7 mil millones de parámetros, este modelo está diseñado para ofrecer un equilibrio óptimo entre rendimiento y eficiencia, lo que lo hace ideal para una amplia gama de aplicaciones en el campo del procesamiento de lenguaje natural (NLP).
+                        </p>
+                    </div>
+
+                    <h2 class="text-2xl font-bold mb-6">Características clave</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="feature-card card-gradient p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-3">Alto Rendimiento</h3>
+                            <p class="text-gray-400">Compite con modelos más grandes usando solo 7B de parámetros.</p>
+                        </div>
+                        <div class="feature-card card-gradient p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-3">Eficiencia</h3>
+                            <p class="text-gray-400">Optimizado para hardware modesto sin sacrificar calidad.</p>
+                        </div>
+                        <div class="feature-card card-gradient p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-3">Versión 0.3</h3>
+                            <p class="text-gray-400">Mejoras en precisión y coherencia del texto generado.</p>
+                        </div>
+                        <div class="feature-card card-gradient p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-3">Open Source</h3>
+                            <p class="text-gray-400">Código abierto para personalización y adaptación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aplicaciones y Ventajas -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Aplicaciones -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-8">Aplicaciones Comunes</h2>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="feature-card card-gradient p-6 rounded-xl">
+                            <i class="fas fa-robot text-blue-500 text-3xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-3">Chatbots y Asistentes</h3>
+                            <p class="text-gray-400">Para interacciones fluidas y naturales con usuarios.</p>
+                        </div>
+                        <div class="feature-card card-gradient p-6 rounded-xl">
+                            <i class="fas fa-pen-fancy text-blue-500 text-3xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-3">Generación de Contenido</h3>
+                            <p class="text-gray-400">Creación de textos, artículos y correos electrónicos.</p>
+                        </div>
+                        <div class="feature-card card-gradient p-6 rounded-xl">
+                            <i class="fas fa-language text-blue-500 text-3xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-3">Traducción Automática</h3>
+                            <p class="text-gray-400">Soporte para múltiples idiomas con alta precisión.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ventajas Competitivas -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-8">Ventajas Competitivas</h2>
+                    <div class="card-gradient rounded-xl p-8">
+                        <ul class="space-y-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h3 class="font-bold mb-2">Ligero y Rápido</h3>
+                                    <p class="text-gray-400">Ideal para entornos con limitaciones de hardware.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h3 class="font-bold mb-2">Código Abierto</h3>
+                                    <p class="text-gray-400">Permite personalización y adaptación a necesidades específicas.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h3 class="font-bold mb-2">Actualizaciones Frecuentes</h3>
+                                    <p class="text-gray-400">Compromiso con la mejora continua y optimización.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
