@@ -51,11 +51,3 @@ Ecliptor soporta una variedad de modelos de IA, incluyendo:
 Próximamente en Ecliptor:
 - **Integración con Hugging Face**: Soporte para modelos de Hugging Face.
 - **Optimizaciones Avanzadas**: Mejoras de rendimiento y nuevas características.
-
----
-
-## 🛠️ Instalación y Uso
-
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/ecliptor.git
