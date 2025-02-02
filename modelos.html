@@ -31,6 +31,16 @@
             border-radius: 0.5rem;  /* rounded-lg equivalente */
             margin-bottom: 1rem;    /* mb-4 equivalente */
         }
+
+        /* Agregamos estas clases para la animación */
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body class="gradient-bg min-h-screen text-white">
@@ -53,7 +63,7 @@
         <!-- Cambiar grid a 4 columnas -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <!-- Llama Models -->
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://nlpcloud.com/assets/images/llama-3.jpg" alt="Llama 3" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Llama 3 Series</h3>
                 <p class="text-gray-300">La última generación de modelos Llama, incluyendo Llama 3.1, 3.2 y 3.3. Disponible en tamaños desde 1B hasta 405B parámetros.</p>
@@ -62,7 +72,7 @@
                     <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Multimodal</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://i.ytimg.com/vi/-dnGa6Oms5I/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAw2TqX9HSmkA8CK9i28UC8xP9y7g" alt="Llama 3.3" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Llama 3.3</h3>
                 <p class="text-gray-300">Modelo de 70B parámetros con rendimiento similar a Llama 3.1 de 405B parámetros.</p>
@@ -71,7 +81,7 @@
                     <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Eficiente</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://miro.medium.com/v2/resize:fit:840/1*BQ0u-Zti_ax2El9VMKsLkA.png" alt="Llama 3.2" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Llama 3.2</h3>
                 <p class="text-gray-300">Modelos de 1B y 3B parámetros de Meta, diseñados para aplicaciones que requieren eficiencia.</p>
@@ -80,7 +90,7 @@
                     <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Eficiente</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://tiempo.hn/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-24-at-3.53.49-PM.jpeg" alt="Llama 3.1" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Llama 3.1</h3>
                 <p class="text-gray-300">Modelos de Meta disponibles en tamaños de 8B, 70B y 405B parámetros, reconocidos por su rendimiento.</p>
@@ -89,7 +99,7 @@
                     <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Rendimiento</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://justai.in/wp-content/uploads/2024/07/1715270971185.jpeg" alt="Llama 3" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Llama 3</h3>
                 <p class="text-gray-300">Considerado el modelo de lenguaje abierto más capaz hasta la fecha, disponible en tamaños de 8B y 70B parámetros.</p>
@@ -98,7 +108,7 @@
                     <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Capaz</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://meetcody.ai/wp-content/uploads/2023/07/LlamaCover-1.png" alt="Llama 2" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Llama 2</h3>
                 <p class="text-gray-300">Colección de modelos de lenguaje fundamentales que varían desde 7B hasta 70B parámetros, reconocidos por su versatilidad en diversas tareas.</p>
@@ -107,7 +117,7 @@
                     <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Versátil</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://miro.medium.com/v2/resize:fit:840/1*BQ0u-Zti_ax2El9VMKsLkA.png" alt="Llama 3.2 Vision" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Llama 3.2 Vision</h3>
                 <p class="text-gray-300">Modelos generativos de razonamiento de imágenes ajustados por instrucción, disponibles en tamaños de 11B y 90B parámetros.</p>
@@ -116,7 +126,7 @@
                     <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Visión</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://miro.medium.com/v2/resize:fit:1400/0*1FmvL_V3GV86gafU">
                 <h3 class="text-xl font-semibold mb-2">TinyLlama</h3>
                 <p class="text-gray-300">Modelo compacto de 1.1B parámetros, entrenado en 3B tokens. Ideal para recursos limitados.</p>
@@ -127,7 +137,7 @@
             </div>
 
             <!-- DeepSeek Models -->
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl3AiXzUM1Y_EK7pDZntY0S6BR1_weLhCbHA&s" 
                      alt="DeepSeek" 
                      class="model-image">
@@ -138,7 +148,7 @@
                     <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">671B params</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA3cayQwJlLPFq_yZCgsTUVLTtcmf9P3dJXqL88RHlSym2tY-NMdD_A4E1K_H7PjDJjJ8&usqp=CAU" alt="DeepSeek Coder" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">DeepSeek Coder V2</h3>
                 <p class="text-gray-300">Modelo MoE para código con rendimiento similar a GPT-4 Turbo. Disponible en 16B y 236B parámetros.</p>
@@ -149,7 +159,7 @@
             </div>
 
             <!-- Mixtral Models -->
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2iqpWSMZ5JPwbD8fQ7Ih2FShtlYr81ZImDg&s" 
                      alt="Mixtral" 
                      class="model-image">
@@ -160,7 +170,7 @@
                     <span class="bg-red-600 text-xs px-2 py-1 rounded ml-2">Alto rendimiento</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://miro.medium.com/v2/resize:fit:1200/0*XiRwq3VHQ0tISOAk.png" alt="Mistral-Nemo" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Mistral-Nemo</h3>
                 <p class="text-gray-300">Colaboración Mistral AI + NVIDIA. 12B parámetros y contexto de 128k tokens.</p>
@@ -169,7 +179,7 @@
                     <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">NVIDIA</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://images.squarespace-cdn.com/content/v1/5c8ac34016b6400b402eab7c/1709120487773-OFRK8YXMEQMDKQFHYJGU/Portada+Mistral+Ai.png" alt="Mistral" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Mistral</h3>
                 <p class="text-gray-300">Modelo de 7B parámetros de Mistral AI v0.3, reconocido por su eficiencia en diversas tareas.</p>
@@ -180,7 +190,7 @@
             </div>
 
             <!-- Phi Models -->
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxJoKYLd-f3T5CUi6ettztF6BAWrojF-jIQQ&s" 
                      alt="Phi Series" 
                      class="model-image">
@@ -191,7 +201,7 @@
                     <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">Microsoft</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuvtrYOAVYhrwLaMT01U53ewmTA9qoxOahdw&s" alt="Phi-4" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Phi-4</h3>
                 <p class="text-gray-300">Modelo de 14B parámetros de Microsoft, destacado en comprensión y razonamiento del lenguaje.</p>
@@ -202,7 +212,7 @@
             </div>
 
             <!-- Qwen Models -->
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzhE0lnhiK9tJHZFOoHIYKSt2LPoatQEQRBA&s" 
                      alt="Qwen Series" 
                      class="model-image">
@@ -213,7 +223,7 @@
                     <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">128K contexto</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300 feature-card">
                 <img src="https://www.geeky-gadgets.com/wp-content/uploads/2024/03/Alibaba-Qwen-1.5-powerful-AI-model-.webp" alt="Qwen 1.5" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Qwen 1.5</h3>
                 <p class="text-gray-300">Modelos de lenguaje de gran escala desarrollados por Alibaba Cloud, desde 0.5B hasta 110B parámetros.</p>
@@ -222,7 +232,7 @@
                     <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Alibaba Cloud</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300 feature-card">
                 <img src="https://the-decoder.com/wp-content/uploads/2024/06/Qwen2-Logo-Alibaba.jpeg" alt="Qwen 2" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Qwen 2</h3>
                 <p class="text-gray-300">Nueva serie de modelos de lenguaje de gran escala del grupo Alibaba, diseñados para mejorar el rendimiento en diversas aplicaciones.</p>
@@ -231,7 +241,7 @@
                     <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Rendimiento</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300 feature-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQILdpOvcvRnvkC970Kmdcnk9cVvj9lGepEng&s" alt="Qwen 2.5" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Qwen 2.5</h3>
                 <p class="text-gray-300">Modelos preentrenados en el último conjunto de datos a gran escala de Alibaba, con soporte para hasta 128K tokens y capacidades multilingües.</p>
@@ -240,7 +250,7 @@
                     <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Multilingüe</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300 feature-card">
                 <img src="https://ollama.com/assets/library/qwen2.5-coder/59b3c116-2653-4d50-9b5f-1fefd24a61bf" alt="Qwen 2.5 Coder" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Qwen 2.5 Coder</h3>
                 <p class="text-gray-300">Serie específica para código de Qwen, con mejoras en generación y razonamiento. 0.5B a 32B parámetros.</p>
@@ -251,7 +261,7 @@
             </div>
 
             <!-- Gemma Models -->
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300 feature-card">
                 <img src="https://cdn.mos.cms.futurecdn.net/yreeymPhcd6P8VraeWNZtW-1200-80.jpeg" 
                      alt="Gemma" 
                      class="model-image">
@@ -262,7 +272,7 @@
                     <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">Eficiente</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300 feature-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYl-UlXtyTdf-y-75z5XzMmeg8hW56Nf6RXQ&s" 
                      alt="Gemma" 
                      class="model-image">
@@ -273,7 +283,7 @@
                     <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">Eficiente</span>
                 </div>
             </div>
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300 feature-card">
                 <img src="https://miro.medium.com/v2/resize:fit:2000/1*H8xEYTW4dZCTEOcYu6kGSQ.png" alt="Gemma 2" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Gemma 2</h3>
                 <p class="text-gray-300">Modelo de alto rendimiento de Google, disponible en 2B, 9B y 27B parámetros, optimizado para diversas tareas.</p>
@@ -284,7 +294,7 @@
             </div>
 
             <!-- LLaVA -->
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300 feature-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-_tWcjgUza_M1jH7ixlj6EW7XE6_KovbdLaSoEsZQwrCurDR7_q1uwAYsL_TpTRksQrc&usqp=CAU" 
                      alt="LLaVA" 
                      class="model-image">
@@ -297,7 +307,7 @@
             </div>
 
             <!-- StarCoder2 -->
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300 feature-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrUOxd2zA_BoEzFpwE6UrA89k0qhDGQGY3Ow&s" 
                      alt="StarCoder2" 
                      class="model-image">
@@ -310,7 +320,7 @@
             </div>
 
             <!-- Nomic-Embed-Text -->
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300 feature-card">
                 <img src="https://www.llamaindex.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F7m9jw85w%2Fproduction%2Fe6c9332eed80d20e745b811f0e5c4b75d2b3090b-3355x1870.png%3Ffit%3Dmax%26auto%3Dformat&w=1920&q=75" alt="Nomic-Embed-Text" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Nomic-Embed-Text</h3>
                 <p class="text-gray-300">Modelo de embeddings de alto rendimiento con amplia ventana de contexto, ideal para búsqueda y recuperación de información.</p>
@@ -321,7 +331,7 @@
             </div>
 
             <!-- Snowflake-Arctic-Embed -->
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300 feature-card">
                 <img src="https://publish-p57963-e462109.adobeaemcloud.com/content/dam/snowflake-site/blog/2024/05/sf_Snowflakes-Arctic-TILT_document_LLM.jpg" alt="Snowflake-Arctic-Embed" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">Snowflake-Arctic-Embed</h3>
                 <p class="text-gray-300">Suite de modelos de embeddings de texto por Snowflake, optimizados para el rendimiento, disponibles en tamaños desde 22M hasta 335M parámetros.</p>
@@ -332,7 +342,7 @@
             </div>
 
             <!-- CodeLlama -->
-            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300 feature-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd9-FBlSA1o4tWttKDlF3kaNXJZDxVrsnfjg&s" alt="CodeLlama" class="model-image">
                 <h3 class="text-xl font-semibold mb-2">CodeLlama</h3>
                 <p class="text-gray-300">Modelo especializado en generación y análisis de código, disponible en 7B, 13B, 34B y 70B parámetros.</p>
