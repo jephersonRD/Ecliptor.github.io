@@ -52,7 +52,7 @@ Próximamente en Ecliptor:
 - **Integración con Hugging Face**: Soporte para modelos de Hugging Face.
 - **Optimizaciones Avanzadas**: Mejoras de rendimiento y nuevas características.
 
-##🌐 Enlaces
+## 🌐 Enlaces
 
 GitHub:https://github.com/jephersonRD
 
