@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ecliptor - Catálogo de Modelos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .card-gradient {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+        }
+
+        .glow {
+            box-shadow: 0 0 15px rgba(66, 153, 225, 0.5);
+        }
+
+        .model-image {
+            width: 100%;
+            height: 12rem;  /* h-48 equivalente */
+            object-fit: contain;
+            border-radius: 0.5rem;  /* rounded-lg equivalente */
+            margin-bottom: 1rem;    /* mb-4 equivalente */
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen text-white">
+    <nav class="p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-400">
+                <i class="fas fa-robot mr-2"></i>Ecliptor
+            </a>
+            <!-- Agregar botón de regresar -->
+            <a href="index.html" class="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors">
+                <i class="fas fa-arrow-left"></i>
+                <span>Regresar</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-12">Catálogo de Modelos</h1>
+        
+        <!-- Cambiar grid a 4 columnas -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Llama Models -->
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://nlpcloud.com/assets/images/llama-3.jpg" alt="Llama 3" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Llama 3 Series</h3>
+                <p class="text-gray-300">La última generación de modelos Llama, incluyendo Llama 3.1, 3.2 y 3.3. Disponible en tamaños desde 1B hasta 405B parámetros.</p>
+                <div class="mt-4">
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded">Hasta 405B params</span>
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Multimodal</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://i.ytimg.com/vi/-dnGa6Oms5I/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAw2TqX9HSmkA8CK9i28UC8xP9y7g" alt="Llama 3.3" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Llama 3.3</h3>
+                <p class="text-gray-300">Modelo de 70B parámetros con rendimiento similar a Llama 3.1 de 405B parámetros.</p>
+                <div class="mt-4">
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded">70B params</span>
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Eficiente</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://miro.medium.com/v2/resize:fit:840/1*BQ0u-Zti_ax2El9VMKsLkA.png" alt="Llama 3.2" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Llama 3.2</h3>
+                <p class="text-gray-300">Modelos de 1B y 3B parámetros de Meta, diseñados para aplicaciones que requieren eficiencia.</p>
+                <div class="mt-4">
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded">1B/3B params</span>
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Eficiente</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://tiempo.hn/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-24-at-3.53.49-PM.jpeg" alt="Llama 3.1" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Llama 3.1</h3>
+                <p class="text-gray-300">Modelos de Meta disponibles en tamaños de 8B, 70B y 405B parámetros, reconocidos por su rendimiento.</p>
+                <div class="mt-4">
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded">8B/70B/405B params</span>
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Rendimiento</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://justai.in/wp-content/uploads/2024/07/1715270971185.jpeg" alt="Llama 3" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Llama 3</h3>
+                <p class="text-gray-300">Considerado el modelo de lenguaje abierto más capaz hasta la fecha, disponible en tamaños de 8B y 70B parámetros.</p>
+                <div class="mt-4">
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded">8B/70B params</span>
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Capaz</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://meetcody.ai/wp-content/uploads/2023/07/LlamaCover-1.png" alt="Llama 2" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Llama 2</h3>
+                <p class="text-gray-300">Colección de modelos de lenguaje fundamentales que varían desde 7B hasta 70B parámetros, reconocidos por su versatilidad en diversas tareas.</p>
+                <div class="mt-4">
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded">7B-70B params</span>
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Versátil</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://miro.medium.com/v2/resize:fit:840/1*BQ0u-Zti_ax2El9VMKsLkA.png" alt="Llama 3.2 Vision" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Llama 3.2 Vision</h3>
+                <p class="text-gray-300">Modelos generativos de razonamiento de imágenes ajustados por instrucción, disponibles en tamaños de 11B y 90B parámetros.</p>
+                <div class="mt-4">
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded">11B/90B params</span>
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Visión</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/0*1FmvL_V3GV86gafU">
+                <h3 class="text-xl font-semibold mb-2">TinyLlama</h3>
+                <p class="text-gray-300">Modelo compacto de 1.1B parámetros, entrenado en 3B tokens. Ideal para recursos limitados.</p>
+                <div class="mt-4">
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded">Ligero</span>
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">Eficiente</span>
+                </div>
+            </div>
+
+            <!-- DeepSeek Models -->
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl3AiXzUM1Y_EK7pDZntY0S6BR1_weLhCbHA&s" 
+                     alt="DeepSeek" 
+                     class="model-image">
+                <h3 class="text-xl font-semibold mb-2">DeepSeek-R1</h3>
+                <p class="text-gray-300">Primera generación de modelos de razonamiento con rendimiento comparable a OpenAI-o1. Incluye variantes desde 1.5B hasta 671B parámetros.</p>
+                <div class="mt-4">
+                    <span class="bg-purple-600 text-xs px-2 py-1 rounded">Razonamiento</span>
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">671B params</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA3cayQwJlLPFq_yZCgsTUVLTtcmf9P3dJXqL88RHlSym2tY-NMdD_A4E1K_H7PjDJjJ8&usqp=CAU" alt="DeepSeek Coder" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">DeepSeek Coder V2</h3>
+                <p class="text-gray-300">Modelo MoE para código con rendimiento similar a GPT-4 Turbo. Disponible en 16B y 236B parámetros.</p>
+                <div class="mt-4">
+                    <span class="bg-indigo-600 text-xs px-2 py-1 rounded">MoE</span>
+                    <span class="bg-red-600 text-xs px-2 py-1 rounded ml-2">Código</span>
+                </div>
+            </div>
+
+            <!-- Mixtral Models -->
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2iqpWSMZ5JPwbD8fQ7Ih2FShtlYr81ZImDg&s" 
+                     alt="Mixtral" 
+                     class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Mixtral</h3>
+                <p class="text-gray-300">Modelos MoE (Mixture of Experts) de Mistral AI. Disponible en 8x7B y 8x22B parámetros con excelente rendimiento en múltiples tareas.</p>
+                <div class="mt-4">
+                    <span class="bg-yellow-600 text-xs px-2 py-1 rounded">MoE</span>
+                    <span class="bg-red-600 text-xs px-2 py-1 rounded ml-2">Alto rendimiento</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://miro.medium.com/v2/resize:fit:1200/0*XiRwq3VHQ0tISOAk.png" alt="Mistral-Nemo" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Mistral-Nemo</h3>
+                <p class="text-gray-300">Colaboración Mistral AI + NVIDIA. 12B parámetros y contexto de 128k tokens.</p>
+                <div class="mt-4">
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded">128K contexto</span>
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">NVIDIA</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://images.squarespace-cdn.com/content/v1/5c8ac34016b6400b402eab7c/1709120487773-OFRK8YXMEQMDKQFHYJGU/Portada+Mistral+Ai.png" alt="Mistral" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Mistral</h3>
+                <p class="text-gray-300">Modelo de 7B parámetros de Mistral AI v0.3, reconocido por su eficiencia en diversas tareas.</p>
+                <div class="mt-4">
+                    <span class="bg-purple-600 text-xs px-2 py-1 rounded">7B params</span>
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">Eficiente</span>
+                </div>
+            </div>
+
+            <!-- Phi Models -->
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxJoKYLd-f3T5CUi6ettztF6BAWrojF-jIQQ&s" 
+                     alt="Phi Series" 
+                     class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Phi Series (3/4)</h3>
+                <p class="text-gray-300">Modelos ligeros de Microsoft con capacidades avanzadas. Phi-3 (3.8B/14B) y Phi-4 (14B) destacan en razonamiento y comprensión.</p>
+                <div class="mt-4">
+                    <span class="bg-indigo-600 text-xs px-2 py-1 rounded">Eficiente</span>
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">Microsoft</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuvtrYOAVYhrwLaMT01U53ewmTA9qoxOahdw&s" alt="Phi-4" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Phi-4</h3>
+                <p class="text-gray-300">Modelo de 14B parámetros de Microsoft, destacado en comprensión y razonamiento del lenguaje.</p>
+                <div class="mt-4">
+                    <span class="bg-indigo-600 text-xs px-2 py-1 rounded">14B params</span>
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">Microsoft</span>
+                </div>
+            </div>
+
+            <!-- Qwen Models -->
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzhE0lnhiK9tJHZFOoHIYKSt2LPoatQEQRBA&s" 
+                     alt="Qwen Series" 
+                     class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Qwen Series</h3>
+                <p class="text-gray-300">Serie completa (1.5, 2, 2.5) de modelos de Alibaba Cloud. Incluye variantes especializadas para código y soporte para 128K tokens.</p>
+                <div class="mt-4">
+                    <span class="bg-orange-600 text-xs px-2 py-1 rounded">Multilingüe</span>
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">128K contexto</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duration-300">
+                <img src="https://www.geeky-gadgets.com/wp-content/uploads/2024/03/Alibaba-Qwen-1.5-powerful-AI-model-.webp" alt="Qwen 1.5" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Qwen 1.5</h3>
+                <p class="text-gray-300">Modelos de lenguaje de gran escala desarrollados por Alibaba Cloud, desde 0.5B hasta 110B parámetros.</p>
+                <div class="mt-4">
+                    <span class="bg-orange-600 text-xs px-2 py-1 rounded">0.5B-110B params</span>
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Alibaba Cloud</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+                <img src="https://the-decoder.com/wp-content/uploads/2024/06/Qwen2-Logo-Alibaba.jpeg" alt="Qwen 2" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Qwen 2</h3>
+                <p class="text-gray-300">Nueva serie de modelos de lenguaje de gran escala del grupo Alibaba, diseñados para mejorar el rendimiento en diversas aplicaciones.</p>
+                <div class="mt-4">
+                    <span class="bg-orange-600 text-xs px-2 py-1 rounded">Gran escala</span>
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Rendimiento</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQILdpOvcvRnvkC970Kmdcnk9cVvj9lGepEng&s" alt="Qwen 2.5" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Qwen 2.5</h3>
+                <p class="text-gray-300">Modelos preentrenados en el último conjunto de datos a gran escala de Alibaba, con soporte para hasta 128K tokens y capacidades multilingües.</p>
+                <div class="mt-4">
+                    <span class="bg-orange-600 text-xs px-2 py-1 rounded">128K tokens</span>
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Multilingüe</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+                <img src="https://ollama.com/assets/library/qwen2.5-coder/59b3c116-2653-4d50-9b5f-1fefd24a61bf" alt="Qwen 2.5 Coder" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Qwen 2.5 Coder</h3>
+                <p class="text-gray-300">Serie específica para código de Qwen, con mejoras en generación y razonamiento. 0.5B a 32B parámetros.</p>
+                <div class="mt-4">
+                    <span class="bg-yellow-600 text-xs px-2 py-1 rounded">Código</span>
+                    <span class="bg-orange-600 text-xs px-2 py-1 rounded ml-2">Alibaba</span>
+                </div>
+            </div>
+
+            <!-- Gemma Models -->
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+                <img src="https://cdn.mos.cms.futurecdn.net/yreeymPhcd6P8VraeWNZtW-1200-80.jpeg" 
+                     alt="Gemma" 
+                     class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Gemma Series</h3>
+                <p class="text-gray-300">Modelos de Google DeepMind, versiones 1.1 y 2 disponibles en tamaños de 2B, 7B, 9B y 27B parámetros.</p>
+                <div class="mt-4">
+                    <span class="bg-red-600 text-xs px-2 py-1 rounded">Google</span>
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">Eficiente</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYl-UlXtyTdf-y-75z5XzMmeg8hW56Nf6RXQ&s" 
+                     alt="Gemma" 
+                     class="model-image">
+                <h3 class="text-xl font-semibold mb-2">CodeGemma</h3>
+                <p class="text-gray-300">CodeGemma es una colección de modelos livianos y potentes que pueden realizar una variedad de tareas de codificación, como completar código en el medio, generación de código.</p>
+                <div class="mt-4">
+                    <span class="bg-red-600 text-xs px-2 py-1 rounded">Google</span>
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">Eficiente</span>
+                </div>
+            </div>
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+                <img src="https://miro.medium.com/v2/resize:fit:2000/1*H8xEYTW4dZCTEOcYu6kGSQ.png" alt="Gemma 2" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Gemma 2</h3>
+                <p class="text-gray-300">Modelo de alto rendimiento de Google, disponible en 2B, 9B y 27B parámetros, optimizado para diversas tareas.</p>
+                <div class="mt-4">
+                    <span class="bg-red-600 text-xs px-2 py-1 rounded">Google</span>
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Multi-tarea</span>
+                </div>
+            </div>
+
+            <!-- LLaVA -->
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-_tWcjgUza_M1jH7ixlj6EW7XE6_KovbdLaSoEsZQwrCurDR7_q1uwAYsL_TpTRksQrc&usqp=CAU" 
+                     alt="LLaVA" 
+                     class="model-image">
+                <h3 class="text-xl font-semibold mb-2">LLaVA</h3>
+                <p class="text-gray-300">Modelo multimodal que combina visión y lenguaje. Disponible en 7B, 13B y 34B parámetros.</p>
+                <div class="mt-4">
+                    <span class="bg-purple-600 text-xs px-2 py-1 rounded">Multimodal</span>
+                    <span class="bg-green-600 text-xs px-2 py-1 rounded ml-2">Visión + Lenguaje</span>
+                </div>
+            </div>
+
+            <!-- StarCoder2 -->
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrUOxd2zA_BoEzFpwE6UrA89k0qhDGQGY3Ow&s" 
+                     alt="StarCoder2" 
+                     class="model-image">
+                <h3 class="text-xl font-semibold mb-2">StarCoder2</h3>
+                <p class="text-gray-300">Nueva generación de modelos de código abierto para programación. Tamaños: 3B, 7B y 15B parámetros.</p>
+                <div class="mt-4">
+                    <span class="bg-yellow-600 text-xs px-2 py-1 rounded">Código</span>
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">Open Source</span>
+                </div>
+            </div>
+
+            <!-- Nomic-Embed-Text -->
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+                <img src="https://www.llamaindex.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F7m9jw85w%2Fproduction%2Fe6c9332eed80d20e745b811f0e5c4b75d2b3090b-3355x1870.png%3Ffit%3Dmax%26auto%3Dformat&w=1920&q=75" alt="Nomic-Embed-Text" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Nomic-Embed-Text</h3>
+                <p class="text-gray-300">Modelo de embeddings de alto rendimiento con amplia ventana de contexto, ideal para búsqueda y recuperación de información.</p>
+                <div class="mt-4">
+                    <span class="bg-purple-600 text-xs px-2 py-1 rounded">Embeddings</span>
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">Alto rendimiento</span>
+                </div>
+            </div>
+
+            <!-- Snowflake-Arctic-Embed -->
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+                <img src="https://publish-p57963-e462109.adobeaemcloud.com/content/dam/snowflake-site/blog/2024/05/sf_Snowflakes-Arctic-TILT_document_LLM.jpg" alt="Snowflake-Arctic-Embed" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">Snowflake-Arctic-Embed</h3>
+                <p class="text-gray-300">Suite de modelos de embeddings de texto por Snowflake, optimizados para el rendimiento, disponibles en tamaños desde 22M hasta 335M parámetros.</p>
+                <div class="mt-4">
+                    <span class="bg-purple-600 text-xs px-2 py-1 rounded">Embeddings</span>
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">22M-335M params</span>
+                </div>
+            </div>
+
+            <!-- CodeLlama -->
+            <div class="card-gradient rounded-lg p-6 hover:glow transition-all duración-300">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd9-FBlSA1o4tWttKDlF3kaNXJZDxVrsnfjg&s" alt="CodeLlama" class="model-image">
+                <h3 class="text-xl font-semibold mb-2">CodeLlama</h3>
+                <p class="text-gray-300">Modelo especializado en generación y análisis de código, disponible en 7B, 13B, 34B y 70B parámetros.</p>
+                <div class="mt-4">
+                    <span class="bg-yellow-600 text-xs px-2 py-1 rounded">Código</span>
+                    <span class="bg-blue-600 text-xs px-2 py-1 rounded ml-2">Hasta 70B params</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-6 text-gray-400">
+        <p>Powered by Ollama</p>
+    </footer>
+</body>
+</html>
