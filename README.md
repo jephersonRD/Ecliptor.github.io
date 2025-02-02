@@ -54,5 +54,7 @@ Próximamente en Ecliptor:
 
 - 🌐 Enlaces
 GitHub:https://github.com/jephersonRD
+
 YouTube:https://github.com/jephersonRD
+
 TikTok:https://www.tiktok.com/@jepherson_rd
