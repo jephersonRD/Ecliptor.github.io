@@ -51,3 +51,8 @@ Ecliptor soporta una variedad de modelos de IA, incluyendo:
 Próximamente en Ecliptor:
 - **Integración con Hugging Face**: Soporte para modelos de Hugging Face.
 - **Optimizaciones Avanzadas**: Mejoras de rendimiento y nuevas características.
+
+- 🌐 Enlaces
+GitHub:https://github.com/jephersonRD
+YouTube:https://github.com/jephersonRD
+TikTok:https://www.tiktok.com/@jepherson_rd
