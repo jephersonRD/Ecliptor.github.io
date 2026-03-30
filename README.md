@@ -1,61 +1,80 @@
-# Ecliptor 🚀
+# Ecliptor ⚡
 
-![Ecliptor Banner](https://img.freepik.com/vector-premium/conjunto-chips-ia-instalar-e-icono-modo-configuracion-ia-vector-ia-simbolo-forma-ilustracion_293525-2442.jpg)
+> Ejecuta modelos de IA locales con Ollama de forma eficiente, rapida y privada.
 
-**Ecliptor** es una herramienta revolucionaria diseñada para ejecutar modelos de inteligencia artificial (IA) locales, como los de Ollama, de manera eficiente, rápida y sin necesidad de conexión a internet. Optimizado para funcionar en equipos de bajos recursos, Ecliptor es la solución perfecta para desarrolladores, estudiantes, empresas y entusiastas de la tecnología.
+![Ecliptor](https://img.freepik.com/vector-premium/conjunto-chips-ia-instalar-e-icono-modo-configuracion-ia-vector-ia-simbolo-forma-ilustracion_293525-2442.jpg)
 
----
+## Descripcion
 
-## 📌 Descripción del Proyecto
+**Ecliptor** es una herramienta para ejecutar modelos de inteligencia artificial locales usando [Ollama](https://ollama.com), optimizada para funcionar en equipos con recursos limitados (desde 1 GB de RAM). Ejecucion 100% local y privada, sin necesidad de conexion a internet.
 
-Ecliptor está diseñado para ejecutar modelos de IA locales con un consumo mínimo de recursos. A diferencia de otras soluciones que requieren hardware potente, Ecliptor funciona en equipos con tan solo **1 GB de RAM**, lo que lo hace ideal para entornos limitados.
+## Caracteristicas
 
-### ¿Para quién es Ecliptor?
-- **Desarrolladores** que necesitan ejecutar modelos de IA en entornos limitados.
-- **Estudiantes** que quieren experimentar con IA sin hardware potente.
-- **Empresas** que buscan soluciones de IA locales y privadas.
-- **Entusiastas** de la tecnología interesados en IA.
+- **Velocidad optimizada** - Ejecucion rapida con minimo impacto en recursos
+- **Bajo consumo** - Funciona con tan solo 1 GB de RAM
+- **Compatible con Ollama** - Soporte para 30+ modelos de IA
+- **100% privado** - Ejecucion local, tus datos nunca salen de tu equipo
+- **Multiplataforma** - Windows (Linux y macOS proximamente)
+- **Open source** - Codigo abierto para personalizacion
 
----
+## Modelos Soportados
 
-## 🚀 Características Principales
+| Familia | Modelos | Parametros |
+|---------|---------|------------|
+| **Llama** | 3.3, 3.2, 3.1, 3, 2 | 1B - 405B |
+| **DeepSeek** | R1, Coder V2 | 1.5B - 671B |
+| **Mistral** | 7B, Mixtral, Nemo | 7B - 8x22B |
+| **Qwen** | 2.5, 2.5 Coder, 2, 1.5 | 0.5B - 110B |
+| **Gemma** | 2, 1.1, CodeGemma | 2B - 27B |
+| **Phi** | 3, 4 | 3.8B - 14B |
+| **Code** | CodeLlama, StarCoder2 | 3B - 70B |
 
-- **Velocidad Optimizada**: Ejecuta modelos de IA con velocidad excepcional y mínimo impacto en tus recursos.
-- **Bajo Consumo**: Diseñado para minimizar el uso de RAM y CPU sin comprometer el rendimiento.
-- **Compatible con Ollama**: Integración perfecta con todos los modelos de Ollama disponibles.
-- **Privacidad Total**: Ejecución 100% local, sin necesidad de conexión a internet.
+## Requisitos del Sistema
 
----
+| | Minimo | Recomendado |
+|---|---|---|
+| **RAM** | 1 GB | 4 GB |
+| **CPU** | Doble nucleo | Quad-core |
+| **Disco** | 500 MB | 2 GB |
+| **SO** | Windows 10/11 | Windows 10/11 |
 
-## 🛠️ Requisitos Mínimos
+## Descarga
 
-- **RAM**: Desde 1 GB
-- **CPU**: Procesador de doble núcleo (o superior)
-- **Almacenamiento**: Variable según el modelo
-- **SO**: Windows, Linux o macOS
+Descarga la ultima version desde la [pagina de descargas](https://jephersonRD.github.io/Ecliptor.github.io/download.html).
 
----
+## Estructura del Proyecto
 
-## 📂 Modelos Disponibles
+```
+Ecliptor.github.io/
+├── index.html          # Pagina principal
+├── login.html          # Registro e inicio de sesion
+├── download.html       # Pagina de descargas
+├── css/
+│   └── styles.css      # Estilos principales
+├── js/
+│   └── main.js         # JavaScript principal
+├── pages/
+│   ├── modelos.html    # Catalogo completo de modelos
+│   ├── llama2.html     # Detalle modelos Llama
+│   ├── codellama.html  # Detalle CodeLlama
+│   └── mistral.html    # Detalle Mistral
+└── README.md
+```
 
-Ecliptor soporta una variedad de modelos de IA, incluyendo:
+## Tecnologias
 
-- **Llama 2**: Modelo de lenguaje avanzado optimizado para rendimiento.
-- **Mistral**: Modelo eficiente para procesamiento de lenguaje natural.
-- **CodeLlama**: Especializado en generación y análisis de código.
+- HTML5 / CSS3
+- JavaScript (Vanilla)
+- Font Awesome 6
+- Google Fonts (Inter)
+- Ollama
 
----
+## Enlaces
 
-## 🔮 Futuro del Proyecto
+- **GitHub**: [github.com/jephersonRD](https://github.com/jephersonRD)
+- **YouTube**: [@jephMD](https://www.youtube.com/@jephMD)
+- **TikTok**: [@jephMD](https://www.tiktok.com/@jephMD)
 
-Próximamente en Ecliptor:
-- **Integración con Hugging Face**: Soporte para modelos de Hugging Face.
-- **Optimizaciones Avanzadas**: Mejoras de rendimiento y nuevas características.
+## Licencia
 
-## 🌐 Enlaces
-
-GitHub:https://github.com/jephersonRD
-
-YouTube:https://github.com/jephersonRD
-
-TikTok:https://www.tiktok.com/@jepherson_rd
+Copyright (c) 2025-2026 Ecliptor. Todos los derechos reservados.

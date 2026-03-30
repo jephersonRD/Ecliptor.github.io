@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecliptor - Catálogo de Modelos</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="../index.html" class="nav-logo">
+                <span class="nav-logo-icon"><i class="fas fa-bolt"></i></span>
+                Ecliptor
+            </a>
+            <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i>Regresar</a>
+        </nav>
+    </header>
+
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Catálogo de <span class="hero-gradient-text">Modelos</span></h2>
+                <p>Explora todos los modelos de IA compatibles con Ecliptor y Ollama</p>
+            </div>
+
+            <!-- Filtros -->
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2.5rem;" class="fade-in">
+                <button class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;" onclick="filterModels('all')">Todos</button>
+                <button class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;" onclick="filterModels('llama')">Llama</button>
+                <button class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;" onclick="filterModels('deepseek')">DeepSeek</button>
+                <button class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;" onclick="filterModels('mistral')">Mistral</button>
+                <button class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;" onclick="filterModels('qwen')">Qwen</button>
+                <button class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;" onclick="filterModels('gemma')">Gemma</button>
+                <button class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;" onclick="filterModels('phi')">Phi</button>
+                <button class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;" onclick="filterModels('code')">Código</button>
+            </div>
+
+            <div class="models-grid" id="modelsGrid">
+                <!-- Llama Models -->
+                <div class="model-card fade-in" data-category="llama">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://nlpcloud.com/assets/images/llama-3.jpg" alt="Llama 3" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Llama 3 Series</h3>
+                        <p>La última generación de Meta. Incluye Llama 3.1, 3.2 y 3.3. Disponible desde 1B hasta 405B parámetros.</p>
+                        <div class="model-tags">
+                            <span class="model-tag blue">Hasta 405B</span>
+                            <span class="model-tag green">Multimodal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="llama">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://miro.medium.com/v2/resize:fit:840/1*BQ0u-Zti_ax2El9VMKsLkA.png" alt="Llama 3.3" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Llama 3.3</h3>
+                        <p>Modelo de 70B parámetros con rendimiento similar a Llama 3.1 de 405B parámetros. Máxima eficiencia.</p>
+                        <div class="model-tags">
+                            <span class="model-tag blue">70B</span>
+                            <span class="model-tag green">Eficiente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="llama">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://miro.medium.com/v2/resize:fit:840/1*BQ0u-Zti_ax2El9VMKsLkA.png" alt="Llama 3.2" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Llama 3.2</h3>
+                        <p>Modelos de 1B y 3B parámetros de Meta, diseñados para aplicaciones que requieren eficiencia extrema.</p>
+                        <div class="model-tags">
+                            <span class="model-tag blue">1B/3B</span>
+                            <span class="model-tag green">Ligero</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="llama">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://miro.medium.com/v2/resize:fit:840/1*BQ0u-Zti_ax2El9VMKsLkA.png" alt="Llama 3.2 Vision" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Llama 3.2 Vision</h3>
+                        <p>Modelos generativos de razonamiento de imágenes. Disponibles en 11B y 90B parámetros.</p>
+                        <div class="model-tags">
+                            <span class="model-tag purple">11B/90B</span>
+                            <span class="model-tag cyan">Visión</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="llama">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://justai.in/wp-content/uploads/2024/07/1715270971185.jpeg" alt="Llama 3" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Llama 3</h3>
+                        <p>El modelo de lenguaje abierto más capaz. Disponible en 8B y 70B parámetros.</p>
+                        <div class="model-tags">
+                            <span class="model-tag blue">8B/70B</span>
+                            <span class="model-tag green">Capaz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="llama">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://meetcody.ai/wp-content/uploads/2023/07/LlamaCover-1.png" alt="Llama 2" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Llama 2</h3>
+                        <p>Colección de modelos fundamentales de 7B hasta 70B parámetros. Versátil para múltiples tareas.</p>
+                        <div class="model-tags">
+                            <span class="model-tag blue">7B-70B</span>
+                            <span class="model-tag green">Versátil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="llama">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/0*1FmvL_V3GV86gafU" alt="TinyLlama" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>TinyLlama</h3>
+                        <p>Modelo compacto de 1.1B parámetros entrenado en 3B tokens. Ideal para recursos muy limitados.</p>
+                        <div class="model-tags">
+                            <span class="model-tag green">Ligero</span>
+                            <span class="model-tag blue">1.1B</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DeepSeek Models -->
+                <div class="model-card fade-in" data-category="deepseek">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl3AiXzUM1Y_EK7pDZntY0S6BR1_weLhCbHA&s" alt="DeepSeek-R1" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>DeepSeek-R1</h3>
+                        <p>Modelos de razonamiento con rendimiento comparable a OpenAI-o1. Desde 1.5B hasta 671B parámetros.</p>
+                        <div class="model-tags">
+                            <span class="model-tag purple">Razonamiento</span>
+                            <span class="model-tag blue">671B</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="deepseek code">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA3cayQwJlLPFq_yZCgsTUVLTtcmf9P3dJXqL88RHlSym2tY-NMdD_A4E1K_H7PjDJjJ8&usqp=CAU" alt="DeepSeek Coder" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>DeepSeek Coder V2</h3>
+                        <p>Modelo MoE para código con rendimiento similar a GPT-4 Turbo. Disponible en 16B y 236B parámetros.</p>
+                        <div class="model-tags">
+                            <span class="model-tag purple">MoE</span>
+                            <span class="model-tag red">Código</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mistral Models -->
+                <div class="model-card fade-in" data-category="mistral">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2iqpWSMZ5JPwbD8fQ7Ih2FShtlYr81ZImDg&s" alt="Mixtral" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Mixtral</h3>
+                        <p>Modelos MoE de Mistral AI. Disponible en 8x7B y 8x22B con excelente rendimiento multitarea.</p>
+                        <div class="model-tags">
+                            <span class="model-tag yellow">MoE</span>
+                            <span class="model-tag red">Alto rendimiento</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="mistral">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://miro.medium.com/v2/resize:fit:1200/0*XiRwq3VHQ0tISOAk.png" alt="Mistral-Nemo" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Mistral-Nemo</h3>
+                        <p>Colaboración Mistral AI + NVIDIA. 12B parámetros y contexto de 128K tokens.</p>
+                        <div class="model-tags">
+                            <span class="model-tag green">128K</span>
+                            <span class="model-tag blue">NVIDIA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="mistral">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/5c8ac34016b6400b402eab7c/1709120487773-OFRK8YXMEQMDKQFHYJGU/Portada+Mistral+Ai.png" alt="Mistral" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Mistral 7B</h3>
+                        <p>Modelo de 7B parámetros de Mistral AI v0.3, reconocido por su eficiencia en diversas tareas.</p>
+                        <div class="model-tags">
+                            <span class="model-tag purple">7B</span>
+                            <span class="model-tag green">Eficiente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phi Models -->
+                <div class="model-card fade-in" data-category="phi">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxJoKYLd-f3T5CUi6ettztF6BAWrojF-jIQQ&s" alt="Phi Series" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Phi Series (3/4)</h3>
+                        <p>Modelos ligeros de Microsoft. Phi-3 (3.8B/14B) y Phi-4 (14B) destacan en razonamiento.</p>
+                        <div class="model-tags">
+                            <span class="model-tag purple">Eficiente</span>
+                            <span class="model-tag blue">Microsoft</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="phi">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuvtrYOAVYhrwLaMT01U53ewmTA9qoxOahdw&s" alt="Phi-4" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Phi-4</h3>
+                        <p>Modelo de 14B parámetros de Microsoft, destacado en comprensión y razonamiento del lenguaje.</p>
+                        <div class="model-tags">
+                            <span class="model-tag purple">14B</span>
+                            <span class="model-tag blue">Microsoft</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Qwen Models -->
+                <div class="model-card fade-in" data-category="qwen">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzhE0lnhiK9tJHZFOoHIYKSt2LPoatQEQRBA&s" alt="Qwen Series" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Qwen 2.5</h3>
+                        <p>Modelos de Alibaba Cloud con soporte para 128K tokens, multilingües y variantes especializadas para código.</p>
+                        <div class="model-tags">
+                            <span class="model-tag orange">Multilingüe</span>
+                            <span class="model-tag cyan">128K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="qwen code">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://ollama.com/assets/library/qwen2.5-coder/59b3c116-2653-4d50-9b5f-1fefd24a61bf" alt="Qwen 2.5 Coder" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Qwen 2.5 Coder</h3>
+                        <p>Serie específica para código de Qwen. Mejoras en generación y razonamiento. 0.5B a 32B parámetros.</p>
+                        <div class="model-tags">
+                            <span class="model-tag yellow">Código</span>
+                            <span class="model-tag orange">Alibaba</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gemma Models -->
+                <div class="model-card fade-in" data-category="gemma">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://cdn.mos.cms.futurecdn.net/yreeymPhcd6P8VraeWNZtW-1200-80.jpeg" alt="Gemma" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Gemma Series</h3>
+                        <p>Modelos de Google DeepMind. Versiones 1.1 y 2 en tamaños de 2B, 7B, 9B y 27B parámetros.</p>
+                        <div class="model-tags">
+                            <span class="model-tag red">Google</span>
+                            <span class="model-tag green">Eficiente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="gemma code">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYl-UlXtyTdf-y-75z5XzMmeg8hW56Nf6RXQ&s" alt="CodeGemma" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>CodeGemma</h3>
+                        <p>Modelos livianos de Google para tareas de codificación: completado de código, generación y análisis.</p>
+                        <div class="model-tags">
+                            <span class="model-tag red">Google</span>
+                            <span class="model-tag yellow">Código</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="gemma">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://miro.medium.com/v2/resize:fit:2000/1*H8xEYTW4dZCTEOcYu6kGSQ.png" alt="Gemma 2" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Gemma 2</h3>
+                        <p>Alto rendimiento de Google. Disponible en 2B, 9B y 27B parámetros, optimizado para diversas tareas.</p>
+                        <div class="model-tags">
+                            <span class="model-tag red">Google</span>
+                            <span class="model-tag green">Multi-tarea</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code Models -->
+                <div class="model-card fade-in" data-category="code llama">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd9-FBlSA1o4tWttKDlF3kaNXJZDxVrsnfjg&s" alt="CodeLlama" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>CodeLlama</h3>
+                        <p>Especializado en generación y análisis de código. Disponible en 7B, 13B, 34B y 70B parámetros.</p>
+                        <div class="model-tags">
+                            <span class="model-tag yellow">Código</span>
+                            <span class="model-tag blue">Hasta 70B</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-card fade-in" data-category="code">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrUOxd2zA_BoEzFpwE6UrA89k0qhDGQGY3Ow&s" alt="StarCoder2" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>StarCoder2</h3>
+                        <p>Nueva generación de modelos de código abierto para programación. Tamaños: 3B, 7B y 15B.</p>
+                        <div class="model-tags">
+                            <span class="model-tag yellow">Código</span>
+                            <span class="model-tag purple">Open Source</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multimodal -->
+                <div class="model-card fade-in" data-category="llama">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-_tWcjgUza_M1jH7ixlj6EW7XE6_KovbdLaSoEsZQwrCurDR7_q1uwAYsL_TpTRksQrc&usqp=CAU" alt="LLaVA" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>LLaVA</h3>
+                        <p>Modelo multimodal que combina visión y lenguaje. Disponible en 7B, 13B y 34B parámetros.</p>
+                        <div class="model-tags">
+                            <span class="model-tag purple">Multimodal</span>
+                            <span class="model-tag cyan">Visión</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Embeddings -->
+                <div class="model-card fade-in" data-category="qwen">
+                    <div class="model-card-image-wrapper">
+                        <img src="https://www.llamaindex.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F7m9jw85w%2Fproduction%2Fe6c9332eed80d20e745b811f0e5c4b75d2b3090b-3355x1870.png%3Ffit%3Dmax%26auto%3Dformat&w=1920&q=75" alt="Nomic-Embed-Text" class="model-card-image">
+                    </div>
+                    <div class="model-card-body">
+                        <h3>Nomic-Embed-Text</h3>
+                        <p>Modelo de embeddings de alto rendimiento con amplia ventana de contexto. Ideal para búsqueda y RAG.</p>
+                        <div class="model-tags">
+                            <span class="model-tag purple">Embeddings</span>
+                            <span class="model-tag blue">Alto rendimiento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom container">
+            <p>Powered by Ollama v0.18 &bull; &copy; 2025-2026 Ecliptor</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function filterModels(category) {
+            const cards = document.querySelectorAll('.model-card');
+            cards.forEach(card => {
+                const cats = card.dataset.category || '';
+                if (category === 'all' || cats.includes(category)) {
+                    card.style.display = 'block';
+                    setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(10px)';
+                    setTimeout(() => { card.style.display = 'none'; }, 300);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
